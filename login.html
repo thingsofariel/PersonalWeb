@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="login-body">
+    <!-- Add your navbar header here -->
+    <header>
+        <div class="logo">Logo</div>
+        <input type="checkbox" id="click">
+        <label for="click" class="mainicon">
+            <div class="menu" id="menu">
+                <i class="bi bi-list"></i>
+            </div>
+        </label>
+
+        <nav class="nav-list">
+            <a href="index.html">Home</a>
+            <a href="index.html#about">About</a>
+            <a href="index.html#skills">Skills</a>
+            <a href="index.html#portfolio">Portfolio</a>
+            <a href="index.html#blog">Blog</a>
+            <a href="index.html#contact">Contact</a>
+            <a href="login.html" class="btn-login">Login</a>
+        </nav>
+    </header>
+
+    <div class="login-card">
+        <!-- Logo Container -->
+        <div class="login-logo">
+            <!-- You can replace this with an <img> tag later -->
+            <div class="logo-icon"></div> 
+        </div>
+
+        <h2>Sign in</h2>
+        <p class="subtitle">Welcome back! Please sign in to continue</p>
+
+        <form class="login-form">
+            <div class="input-group">
+                <label>Email address <span>*</span></label>
+                <input type="email" placeholder="Enter your email address" required>
+            </div>
+
+            <div class="input-group">
+                <label>Password <span>*</span></label>
+                <div class="password-wrapper">
+                    <input type="password" placeholder="Enter your password" required>
+                    <span class="toggle-password">👁</span>
+                </div>
+            </div>
+
+            <button type="submit" class="btn-continue">Continue</button>
+        </form>
+    </div>
+
+</body>
+</html>
