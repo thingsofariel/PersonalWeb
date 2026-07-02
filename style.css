@@ -7,7 +7,7 @@
 }
 
 body {
-    background-color: #080808;
+    background-color: #240b2e;
     color: #ffffff;
     line-height: 1.6;
 }
@@ -19,10 +19,31 @@ body {
 
 /* Header & Navigation */
 header {
+    position: fixed;
+    top: 20px;
+    left: 50%;                 /* FIX: Changed from 50px to 50% to properly align anchoring point */
+    transform: translateX(-50%); /* Centers the header perfectly dynamically */
+    width: 90%;
+    max-width: 1200px;
+    z-index: 1000;
+    
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 2rem 5%;
+    padding: 0.8rem 2.5rem;
+    background-color: rgba(18, 5, 25, 0.85); 
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(8px);
+}
+
+/* FIX: Add this class right under the header block to format the link collection */
+.nav-list {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 .logo {
@@ -34,15 +55,41 @@ header {
 .nav-list a {
     color: #ffffff;
     text-decoration: none;
-    margin-left: 2rem;
+    margin-left: 0.5rem; /* Reduced to fit capsules comfortably */
+    padding: 8px 16px;
+    border-radius: 30px;
     font-size: 1rem;
     transition: 0.3s;
+    display: inline-block;
 }
 
-.nav-list a:hover {
+.nav-list a.active {
+    background-color: rgba(140, 255, 0, 0.15); /* Translucent accent background */
+    color: var(--accent-color) !important;
+    font-weight: 600;
+    box-shadow: inset 0 0 10px rgba(140, 255, 0, 0.1);
+}
+
+.nav-list a:hover:not(.active) {
+    background-color: rgba(255, 255, 255, 0.05);
     color: var(--accent-color);
 }
 
+.btn-login {
+    background-color: var(--accent-color); 
+    color: #000000;            
+    padding: 8px 20px; /* Adjusted to match structural link sizing */         
+    border-radius: 30px; /* Changed from 5px to 30px to match the pill theme! */       
+    text-decoration: none;     
+    font-weight: bold;
+    margin-left: 1.5rem;
+    transition: 0.3s;
+    display: inline-block;
+}
+
+.btn-login:hover {
+    opacity: 0.8;
+}
 #click, .mainicon {
     display: none;
 }
@@ -52,7 +99,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 5rem 10%;
+    padding: 8rem 10% 5rem 10%; /* Increased top padding from 5rem to 8rem */
     min-height: 80vh;
 }
 
@@ -166,4 +213,106 @@ header {
     transform: scale(1.02);
     box-shadow: 0 0 45px rgba(140, 255, 0, 0.4),
                 inset 0 0 45px rgba(140, 255, 0, 0.2);
+}
+
+/* ==========================================
+   Login Page Specific Styles 
+   ========================================== */
+.login-body {
+    background-color: #240b2e; 
+    display: flex;
+    flex-direction: column; /* Forces header to the top and card below it */
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+/* Adds a bit of space to push the card down beautifully below the header */
+.login-body .login-card {
+    margin: auto 0; 
+}
+
+.login-card {
+    background-color: #1c1c1e; 
+    padding: 40px 30px;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 420px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+.login-card h2 {
+    color: #ffffff;
+    margin: 20px 0 5px 0;
+    font-size: 1.5rem;
+}
+
+.login-card .subtitle {
+    color: #a1a1aa;
+    font-size: 0.9rem;
+    margin-bottom: 30px;
+}
+
+.login-form {
+    text-align: left;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    color: #ffffff;
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+}
+
+.input-group label span {
+    color: #ef4444; 
+}
+
+.input-group input {
+    width: 100%;
+    background-color: #242b3d; 
+    border: 1px solid #2d3748;
+    padding: 12px;
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 0.95rem;
+    box-sizing: border-box;
+}
+
+.password-wrapper {
+    position: relative;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #71717a;
+    cursor: pointer;
+}
+
+.btn-continue {
+    width: 100%;
+    background-color: var(--accent-color);
+    color: #000000;
+    border: none;
+    padding: 14px;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.2s ease;
+}
+
+.btn-continue:hover {
+    opacity: 0.8; /* Smooth dimming effect on hover, matching your nav button */
+    background-color: var(--accent-color); /* Ensures it stays green on hover */
 }
