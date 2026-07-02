@@ -7,7 +7,7 @@
 }
 
 body {
-    background-color: #080808;
+    background-color: #240b2e;
     color: #ffffff;
     line-height: 1.6;
 }
@@ -19,10 +19,31 @@ body {
 
 /* Header & Navigation */
 header {
+    position: fixed;
+    top: 20px;
+    left: 50%;                 /* FIX: Changed from 50px to 50% to properly align anchoring point */
+    transform: translateX(-50%); /* Centers the header perfectly dynamically */
+    width: 90%;
+    max-width: 1200px;
+    z-index: 1000;
+    
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 2rem 5%;
+    padding: 0.8rem 2.5rem;
+    background-color: rgba(18, 5, 25, 0.85); 
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(8px);
+}
+
+/* FIX: Add this class right under the header block to format the link collection */
+.nav-list {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 .logo {
@@ -34,27 +55,40 @@ header {
 .nav-list a {
     color: #ffffff;
     text-decoration: none;
-    margin-left: 2rem;
+    margin-left: 0.5rem; /* Reduced to fit capsules comfortably */
+    padding: 8px 16px;
+    border-radius: 30px;
     font-size: 1rem;
     transition: 0.3s;
+    display: inline-block;
 }
 
-.nav-list a:hover {
+.nav-list a.active {
+    background-color: rgba(140, 255, 0, 0.15); /* Translucent accent background */
+    color: var(--accent-color) !important;
+    font-weight: 600;
+    box-shadow: inset 0 0 10px rgba(140, 255, 0, 0.1);
+}
+
+.nav-list a:hover:not(.active) {
+    background-color: rgba(255, 255, 255, 0.05);
     color: var(--accent-color);
 }
+
 .btn-login {
     background-color: var(--accent-color); 
     color: #000000;            
-    padding: 6px 15px;         
-    border-radius: 5px;        
+    padding: 8px 20px; /* Adjusted to match structural link sizing */         
+    border-radius: 30px; /* Changed from 5px to 30px to match the pill theme! */       
     text-decoration: none;     
     font-weight: bold;
-    margin-left: 2rem; /* Matches the spacing of your other nav links */
+    margin-left: 1.5rem;
     transition: 0.3s;
+    display: inline-block;
 }
 
 .btn-login:hover {
-    opacity: 0.8; /* Slightly dims the green button on hover */
+    opacity: 0.8;
 }
 #click, .mainicon {
     display: none;
@@ -65,7 +99,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 5rem 10%;
+    padding: 8rem 10% 5rem 10%; /* Increased top padding from 5rem to 8rem */
     min-height: 80vh;
 }
 
@@ -185,7 +219,7 @@ header {
    Login Page Specific Styles 
    ========================================== */
 .login-body {
-    background-color: #0c0c0c; 
+    background-color: #240b2e; 
     display: flex;
     flex-direction: column; /* Forces header to the top and card below it */
     align-items: center;
