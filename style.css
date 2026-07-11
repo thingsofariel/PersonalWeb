@@ -326,3 +326,124 @@ header {
     opacity: 0.8; /* Smooth dimming effect on hover, matching your nav button */
     background-color: var(--accent-color); /* Ensures it stays green on hover */
 }
+
+/* ==========================================
+   About Page Specific Styles 
+   ========================================== */
+
+/* Main wrapping wrapper ensuring space below your fixed header */
+.about-section {
+    padding: 10rem 10% 5rem 10%;
+    min-height: 100vh;
+}
+
+/* Flexbox layout: Switches to single column if the screen is too narrow */
+.about-container {
+    display: flex;
+    gap: 4rem;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+/* Left side setup */
+.about-text-column {
+    flex: 2;
+    min-width: 320px;
+}
+
+.about-text-column section {
+    margin-bottom: 3rem;
+}
+
+.about-title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.highlight {
+    color: var(--accent-color);
+}
+
+.tagline {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    color: #e0e0e0;
+}
+
+.about-text-column h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: var(--accent-color);
+    border-bottom: 1px solid rgba(140, 255, 0, 0.15);
+    padding-bottom: 0.5rem;
+}
+
+.about-text-column p {
+    color: #cccccc;
+    margin-bottom: 1.2rem;
+    font-size: 1.05rem;
+}
+
+/* Bullet list configuration */
+.values-list {
+    list-style: none;
+    padding: 0;
+}
+
+.values-list li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+    color: #cccccc;
+}
+
+.values-list li::before {
+    content: "▹";
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+    font-weight: bold;
+}
+
+/* Right side setup: The custom placeholder graphic card */
+.about-visual-column {
+    flex: 1;
+    min-width: 280px;
+    display: flex;
+    justify-content: center;
+}
+
+.profile-card-placeholder {
+    width: 100%;
+    max-width: 340px;
+    height: 420px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(140, 255, 0, 0.2);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    color: #666666;
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.profile-card-placeholder:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-color);
+}
+
+/* Cyan/Lime neon background element */
+.avatar-glow {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    background: var(--accent-color);
+    filter: blur(90px);
+    opacity: 0.12;
+    z-index: 0;
+    pointer-events: none;
+}
