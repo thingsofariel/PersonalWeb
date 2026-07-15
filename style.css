@@ -447,3 +447,195 @@ header {
     z-index: 0;
     pointer-events: none;
 }
+
+/* Container padding */
+.skills-container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+  color: #ffffff;
+}
+
+.skills-container h2 {
+  font-size: 1.8rem;
+  margin-bottom: 24px;
+  opacity: 0.9;
+}
+
+/* Responsive Grid layout */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+/* Individual Skill Cards */
+.skill-card {
+  background: rgba(255, 255, 255, 0.05); /* Subtle transparent layer over your dark bg */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 24px;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+/* Hover effect to bring in your lime green accent */
+.skill-card:hover {
+  transform: translateY(-5px);
+  border-color: #82ff00; /* Matches your navbar accent */
+}
+
+.card-icon {
+  font-size: 2rem;
+  margin-bottom: 12px;
+}
+
+.skill-card h3 {
+  color: #82ff00; /* Accent color for headers */
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-size: 1.4rem;
+}
+
+.skill-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.skill-card li {
+  margin-bottom: 12px;
+  font-size: 1rem;
+  opacity: 0.85;
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Adds a clean, consistent space between the dot and your text */
+}
+
+/* Beautiful custom indicator dot */
+.skill-card li::before {
+  content: "•";
+  color: #82ff00;
+  font-weight: bold;
+  font-size: 1.2rem; /* Makes the bullet look nicely proportioned */
+  line-height: 1;
+}
+
+/* Portfolio Container */
+.portfolio-container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+  color: #ffffff;
+}
+
+.portfolio-container h2 {
+  font-size: 1.8rem;
+  margin-bottom: 24px;
+  opacity: 0.9;
+}
+
+/* 2-Column Responsive Grid */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 32px;
+}
+
+/* Project Card Layout */
+.project-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  overflow: hidden; /* Ensures the image follows the card's rounded corners */
+  transition: transform 0.2s ease, border-color 0.2s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  border-color: #82ff00;
+}
+
+/* Image Placeholder (Replace with <img> tags later) */
+.project-image-placeholder {
+  height: 200px;
+  background: rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.9rem;
+}
+
+/* Content Area inside Card */
+.project-content {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.project-content h3 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-size: 1.4rem;
+}
+
+.project-content p {
+  font-size: 0.95rem;
+  opacity: 0.8;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+/* Tech Tags */
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.tag {
+  background: rgba(130, 255, 0, 0.1);
+  color: #82ff00;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+/* Action Buttons */
+.project-links {
+  display: flex;
+  gap: 12px;
+  margin-top: auto; /* Pushes buttons to the bottom of the card */
+}
+
+.btn-primary, .btn-secondary {
+  text-decoration: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.btn-primary {
+  background: #82ff00;
+  color: #000000;
+}
+
+.btn-primary:hover {
+  background: #a3ff40;
+}
+
+.btn-secondary {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
